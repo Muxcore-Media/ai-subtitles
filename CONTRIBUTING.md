@@ -6,18 +6,18 @@
 
 - Go 1.26.x
 - golangci-lint (optional but recommended)
-- Private module fetch from Forgejo origin:
+- Private module access via GitHub (`gh auth setup-git`):
 
 ```bash
 export GOPRIVATE='github.com/Muxcore-Media/*'
 export GONOSUMDB='github.com/Muxcore-Media/*'
-git config --global url."ssh://forgejo@git.zem.systems:2222/muxcore/".insteadOf "https://github.com/Muxcore-Media/"
+gh auth setup-git
 ```
 
 ### Clone and build
 
 ```bash
-git clone https://git.zem.systems/muxcore/ai-subtitles.git
+git clone https://github.com/Muxcore-Media/ai-subtitles.git
 cd ai-subtitles
 make build
 make test
@@ -53,7 +53,7 @@ make lint
 1. Branch from `main`.
 2. Make your changes with tests.
 3. Run `make ci` locally — it must pass.
-4. Open a PR on Forgejo (`git.zem.systems/muxcore/ai-subtitles`).
+4. Open a PR on GitHub (`github.com/Muxcore-Media/ai-subtitles`).
 
 ## Security Vulnerabilities
 
