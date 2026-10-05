@@ -10,11 +10,11 @@ import (
 	"sync"
 	"time"
 
+	manifest "github.com/Muxcore-Media/ai-subtitles"
 	"github.com/Muxcore-Media/core/pkg/contracts"
+	modulesdk "github.com/Muxcore-Media/core/sdk/go/module"
 	"google.golang.org/grpc"
 )
-
-const moduleVersion = "0.1.0"
 
 type Module struct {
 	id, grpcAddr, httpAddr string
@@ -62,7 +62,7 @@ func New(cfg Config) *Module {
 
 func (m *Module) Info() contracts.ModuleInfo {
 	return contracts.ModuleInfo{
-		ID: m.id, Name: "AI Subtitles", Version: moduleVersion,
+		ID: m.id, Name: "AI Subtitles", Version: modulesdk.ManifestVersion(manifest.ManifestJSON),
 		Roles:          []string{"ai"},
 		Description:    "AI subtitle generation, sync, and translation when catalog search fails",
 		Author:         "Muxcore-Media",

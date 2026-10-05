@@ -1,10 +1,18 @@
 {
   "name": "AI Subtitles",
   "description": "AI subtitle generation, sync, and translation when catalog search fails",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Muxcore-Media",
-  "roles": ["ai"],
-  "capabilities": ["ai.subtitles", "settings"],
-  "contracts": ["contracts-ai", "contracts-media"],
+  "roles": [
+    "ai"
+  ],
+  "capabilities": [
+    "ai.subtitles",
+    "settings"
+  ],
+  "contracts": [
+    "contracts-ai",
+    "contracts-media"
+  ],
   "minCoreVersion": "0.5.8"
 }
